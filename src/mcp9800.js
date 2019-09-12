@@ -18,6 +18,21 @@ class Mcp9800 {
     return buffer[0] + (buffer[1]/256.0);
   }
 
+  resolution(bits) {
+    if (bits >= 1 && bits <= 4) {
+      let config = this.i2c.readByteSync(this.devAddress, registers.CONFIG);
+      this.i2c.writeByteSync(this.devAddress, registers.CONFIG, this.replace_resolution_in_config(config, bits));
+    }
+  }
+
+  //////////////////////
+  // Internal methods //
+  //////////////////////
+
+  replace_resolution_in_config(originalConfig, resolutionBits) {
+    return (originalConfig & (~(0x03 << 5))) | ((resolutionBits-1) << 5);
+  }
+
 }
 
 module.exports = Mcp9800;
