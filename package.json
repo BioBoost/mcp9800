@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/BioBoost/mcp9800/issues"
   },
-  "homepage": "https://github.com/BioBoost/mcp9800#readme"
+  "homepage": "https://github.com/BioBoost/mcp9800#readme",
+  "dependencies": {
+    "i2c-bus": "^4.0.10"
+  }
 }
