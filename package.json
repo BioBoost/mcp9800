@@ -1,0 +1,24 @@
+{
+  "name": "mcp9800",
+  "version": "1.0.0",
+  "description": "Driver library for the MCP9800 temperature sensor",
+  "main": "./src/mcp9800.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BioBoost/mcp9800.git"
+  },
+  "keywords": [
+    "mcp9800",
+    "temperature",
+    "i2c"
+  ],
+  "author": "Nico De Witte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BioBoost/mcp9800/issues"
+  },
+  "homepage": "https://github.com/BioBoost/mcp9800#readme"
+}
