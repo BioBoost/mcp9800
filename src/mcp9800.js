@@ -15,7 +15,7 @@ class Mcp9800 {
   temperature() {
     let buffer = Buffer.alloc(2, 0x00);
     this.i2c.readI2cBlockSync(this.devAddress, registers.TEMPERATURE, buffer.length, buffer);
-    return buffer[0] + (buffer[1]/256.0);
+    return this.convert_to_decimal_temperature(buffer);
   }
 
   resolution(bits) {
@@ -31,6 +31,10 @@ class Mcp9800 {
 
   replace_resolution_in_config(originalConfig, resolutionBits) {
     return (originalConfig & (~(0x03 << 5))) | ((resolutionBits-1) << 5);
+  }
+
+  convert_to_decimal_temperature(buffer) {
+    return buffer[0] + (buffer[1]/256.0);
   }
 
 }
